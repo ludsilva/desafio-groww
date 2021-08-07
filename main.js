@@ -16,7 +16,6 @@ readApi();
 
 async function main(){
     await readApi();
-    testeData(data);
 
     retornarNomeIdade(data);
 
@@ -30,16 +29,14 @@ async function main(){
 }
 main();
 
-const testeData = (data) => {console.log(data)};
-
 //Criar uma função que retorne o nome do usuário e sua idade
 
-function retornarNomeIdade(data){
+const retornarNomeIdade = (data) => {
     console.log(`Usuário: ${data.usuario} e idade: ${data.idade}`);
 }
 
 //Criar uma função que retorna o tipo de documento e o número dele.
-function typeOfDocumentAndNumber(data){
+const typeOfDocumentAndNumber = (data) => {
     console.log(`Tipo do documento: ${data.documentType}. Número do documento: ${data.documentNumber}.`)
 }
 
@@ -73,8 +70,8 @@ const nomeValoreQtde = (data) => {
 };
 
 //  Criar uma função que retorna a quantidade de produtos sendo vendidas
-function qtdeProdutosVendidos(data){
-    return console.log(`Quantidade vendida: ${data.transacao.items[0].quantity}`);
+const qtdeProdutosVendidos = (data) => {
+    console.log(`Quantidade vendida: ${data.transacao.items[0].quantity}`);
 }
 // Criar uma função que processa uma compra (Quando chamar essa função, diminuir o total de itens para venda)
 function processaCompra(data){
@@ -86,5 +83,6 @@ function processaCompra(data){
 }
 //  Criar uma função que retorna o status e o link para o pagamento
 function statusELinkPagamento(data){
-    return console.log(`Status: ${data.links_pagamento.status} \nLink de pagamento: ${data.links_pagamento.url}`);
+    const {links_pagamento: {status, url},} = data;
+    return console.log(`Status: ${status} \nLink de pagamento: ${url}`);
 }   
