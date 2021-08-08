@@ -24,13 +24,13 @@ async function main(){
     //qtdeProdutosVendidos(data);
     //processaCompra(data);
     //statusELinkPagamento(data);
-    retornarStatus(data);
-    valorCompraQtPago(data);
-    refund(data);
-    cartaoCredito(data);
-    aprovaReprova(data);
-    comprador(data);
-    compradorTel(data);
+    //retornarStatus(data);
+    //valorCompraQtPago(data);
+    //refund(data);
+    //cartaoCredito(data);
+    //aprovaReprova(data);
+    //comprador(data);
+    //compradorTel(data);
 }
 main();
 /*LUDMILA*/
@@ -96,8 +96,8 @@ function statusELinkPagamento(data){
 }   
 */
 /*NATHÁLIA*/
-console.log("###NATHÁLIA###");
 //Criar uma função que retorna o status de uma compra
+/*
 function retornarStatus(data){
     console.log(`Status da compra: ${data.transacao.status}.`);
 }
@@ -134,18 +134,15 @@ function cartaoCredito(data){
 }
 
 //Criar uma função que aprova ou reprova o valor da compra( Alterar o valor is_approved para true ou false, dependendo do parâmetro da função)
-//function aprovaReprova(data){
-     if(data.transacao.valor < data.transacao.refunded_amount){
+function aprovaReprova(data){
+    if(data.transacao.valor < data.transacao.refunded_amount){
     data.transacao.is_approved = false; 
 
     }
-    
-    
     console.log(data.transacao.is_approved);
     console.log("entrou");
-
-
-
+}   
+    
 //Criar uma função que retorna o nome do comprador, o País e o e-mail
 function comprador(data){
     console.log(`Nome do comprador: ${data.transacao.customer.name} \nPaís: ${data.transacao.customer.country} \nEmail: ${data.transacao.customer.email}`);
@@ -156,4 +153,25 @@ function compradorTel(data){
     var phone = data.transacao.customer.phone;
     console.log(`Telefone do comprador: ${phone}`);
 }
+*/
 
+/*LARISSA*/
+//Criar uma função que retorne o tipo de documento da empresa, o número do documento e o nome fictício.
+
+
+//Criar uma função que retorna o número e a marca do cartão de crédito
+
+
+//Criar uma função que retorna se a conta está ativa
+
+
+//Criar uma função que retorna nome, número e agencia do banco
+
+
+//Criar uma função que retorna O saldo em conta e o valor limite(lis) da conta
+
+
+//Criar uma função que retorna o valor de empréstimo solicitado
+
+
+//Criar uma função que calcula o valor total(mensalidade x amortização) do pagamento do emprestimo
