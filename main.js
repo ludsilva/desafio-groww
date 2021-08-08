@@ -1,36 +1,42 @@
 "use strict";
 //Chamar os dados da API e armazenar em uma variável
 
-let data = '';
-async function readApi(){
-    let url = 'https://safe-sierra-45694.herokuapp.com/user';
-    try{
-        let response = await fetch(url);
-        data = await response.json();
-    }catch(err){
-        console.log(err);
-    }
+let data = "";
+async function readApi() {
+  let url = "https://safe-sierra-45694.herokuapp.com/user";
+  try {
+    let response = await fetch(url);
+    data = await response.json();
+  } catch (err) {
+    console.log(err);
+  }
 }
 readApi();
 
-
-async function main(){
-    await readApi();
-    //retornarNomeIdade(data);
-    //typeOfDocumentAndNumber(data);
-    //enderecoCompleto(data);
-    //taxaEDataEntrega(data);
-    //nomeValoreQtde(data);
-    //qtdeProdutosVendidos(data);
-    //processaCompra(data);
-    //statusELinkPagamento(data);
-    //retornarStatus(data);
-    //valorCompraQtPago(data);
-    //refund(data);
-    //cartaoCredito(data);
-    //aprovaReprova(data);
-    //comprador(data);
-    //compradorTel(data);
+async function main() {
+  await readApi();
+  //retornarNomeIdade(data);
+  //typeOfDocumentAndNumber(data);
+  //enderecoCompleto(data);
+  //taxaEDataEntrega(data);
+  //nomeValoreQtde(data);
+  //qtdeProdutosVendidos(data);
+  //processaCompra(data);
+  //statusELinkPagamento(data);
+  //retornarStatus(data);
+  //valorCompraQtPago(data);
+  //refund(data);
+  //cartaoCredito(data);
+  //aprovaReprova(data);
+  //comprador(data);
+  //compradorTel(data);
+  //retornaDadosEmpresa(data)
+  //retornaCartao(data);
+  //retornaStatusConta(data);
+  //retornaBanco(data);
+  //retornaSaldo(data);
+  //retornaEmprestimo(data);
+  //retornaSimulacao(data);
 }
 main();
 /*LUDMILA*/
@@ -156,22 +162,65 @@ function compradorTel(data){
 */
 
 /*LARISSA*/
-//Criar uma função que retorne o tipo de documento da empresa, o número do documento e o nome fictício.
 
+//Criar uma função que retorne o tipo de documento da empresa, o número do documento e o nome fictício.
+/* 
+function retornaDadosEmpresa(data) {
+  let tipoDocumento = data.documentType;
+  let numeroDocumento = data.documentNumber;
+  let nome = data.nomeFicticio;
+  console.log(
+    `Tipo de documento: ${tipoDocumento} \nNúmero do documento: ${numeroDocumento} \nNome Ficticio: ${nome}  `
+  );
+}
 
 //Criar uma função que retorna o número e a marca do cartão de crédito
 
+function retornaCartao(data) {
+  let numero = data["cartões"].digitos;
+  let marca = data["cartões"].marca;
+  console.log(
+    `Número do cartão de crédito: ${numero} \nBandeira do cartão de crédito: ${marca}`
+  );
+}
 
 //Criar uma função que retorna se a conta está ativa
 
+function retornaStatusConta(data) {
+  let status;
+  data.conta_ativa[0] ? (status = "Ativa") : (status = "Inativa");
+  console.log(`Status da conta: ${status}`);
+}
 
 //Criar uma função que retorna nome, número e agencia do banco
 
+function retornaBanco(data) {
+  let nome = data.banco.nome;
+  let numero = data.banco.numero_conta;
+  let agencia = data.banco.agencia;
+  console.log(
+    `Nome do banco: ${nome} \nNúmero da conta: ${numero} \nAgência: ${agencia} `
+  );
+}
 
 //Criar uma função que retorna O saldo em conta e o valor limite(lis) da conta
 
+function retornaSaldo(data) {
+  let saldo = data.banco.saldo_em_conta;
+  let limite = data.banco.limite;
+  console.log(`Saldo disponível: ${saldo} \nValor limite da conta: ${limite}`);
+}
 
 //Criar uma função que retorna o valor de empréstimo solicitado
 
+function retornaEmprestimo(data) {
+  let emprestimoValor = data.emprestimo.valor;
+  console.log(`Valor do empréstimo solicitado: ${emprestimoValor}`);
+}
 
 //Criar uma função que calcula o valor total(mensalidade x amortização) do pagamento do emprestimo
+function retornaSimulacao(data) {
+  let total = data.emprestimo.mensalidade * data.emprestimo["amortização"];
+  console.log(`Total do pagamento do empréstimo: ${total}`);
+}
+ */
