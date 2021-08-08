@@ -206,21 +206,32 @@ function retornaBanco(data) {
 //Criar uma função que retorna O saldo em conta e o valor limite(lis) da conta
 
 function retornaSaldo(data) {
-  let saldo = data.banco.saldo_em_conta;
-  let limite = data.banco.limite;
-  console.log(`Saldo disponível: ${saldo} \nValor limite da conta: ${limite}`);
+    let saldo = data.banco.saldo_em_conta
+    let limite =  data.banco.limite
+
+    saldo = saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    limite = limite.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+    console.log(`Saldo disponível: ${saldo} \nValor limite da conta: ${limite}`)
 }
 
 //Criar uma função que retorna o valor de empréstimo solicitado
 
 function retornaEmprestimo(data) {
-  let emprestimoValor = data.emprestimo.valor;
-  console.log(`Valor do empréstimo solicitado: ${emprestimoValor}`);
+    let emprestimoValor = data.emprestimo.valor
+
+    emprestimoValor = emprestimoValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+    console.log(`Valor do empréstimo solicitado: ${emprestimoValor}`)
 }
 
 //Criar uma função que calcula o valor total(mensalidade x amortização) do pagamento do emprestimo
 function retornaSimulacao(data) {
-  let total = data.emprestimo.mensalidade * data.emprestimo["amortização"];
-  console.log(`Total do pagamento do empréstimo: ${total}`);
+    let total = data.emprestimo.mensalidade * data.emprestimo["amortização"]
+
+    total = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+    console.log(`Total do pagamento do empréstimo: ${total}`);
 }
+
  */
