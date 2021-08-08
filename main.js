@@ -23,13 +23,13 @@ async function main() {
   //qtdeProdutosVendidos(data);
   //processaCompra(data);
   //statusELinkPagamento(data);
-  //retornarStatus(data);
-  //valorCompraQtPago(data);
-  //refund(data);
-  //cartaoCredito(data);
-  //aprovaReprova(data);
-  //comprador(data);
-  //compradorTel(data);
+  retornarStatus(data);
+  valorCompraQtPago(data);
+  refund(data);
+  cartaoCredito(data);
+  aprovaReprova(data);
+  comprador(data);
+  compradorTel(data);
   //retornaDadosEmpresa(data)
   //retornaCartao(data);
   //retornaStatusConta(data);
@@ -103,7 +103,7 @@ function statusELinkPagamento(data){
 */
 /*NATHÁLIA*/
 //Criar uma função que retorna o status de uma compra
-/*
+
 function retornarStatus(data){
     console.log(`Status da compra: ${data.transacao.status}.`);
 }
@@ -159,7 +159,7 @@ function compradorTel(data){
     var phone = data.transacao.customer.phone;
     console.log(`Telefone do comprador: ${phone}`);
 }
-*/
+
 
 /*LARISSA*/
 
